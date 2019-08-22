@@ -3,10 +3,20 @@ Zhizhong John DIng
 # Preface:
 This is a cheatsheet and tutorial for the Numpy library.
 # Table of contents
-1. [Advantage of Numpy over python list](#1. advantage of Numpy over python list)
-2. [Basics](# 2. Basics)
-3. [Array creation](# 3. Array creation)
-4.
+- [1. Advantage of Numpy over python list](#1-advantage-of-numpy-over-python-list)
+- [2. Basics](#2-basics)
+  * [Data type conversion](#data-type-conversion)
+- [3. Array creation](#3-array-creation)
+  * [3.1. From known value](#31-from-known-value)
+    + [Create from Python list](#create-from-python-list)
+    + [Create using function](#create-using-function)
+  * [3.2 Initializing with placeholder](#32-initializing-with-placeholder)
+  * [3.3 Import](#33-import)
+    + [3.3.1 Import from csv](#331-import-from-csv)
+      - [Method 1. use csv reader](#method-1-use-csv-reader)
+      - [Method 2. load csv with Numpy function](#method-2-load-csv-with-numpy-function)
+      - [Method 3. load csv with Pandas](#method-3-load-csv-with-pandas)
+- [4. Basic operations](#4-basic-operations)
 
 # 1. Advantage of Numpy over python list
 NumPy is more compact, convenient than Python Lists. The vector and matrix operations in NumPy is well and efficiently implemented. NumPy is much faster and it also have more functionality such as FFTs, convolutions, fast searching, basic statistics, linear algebra, histograms, etc.
