@@ -332,7 +332,7 @@ print(a)
 | Operator               | Description                                  | Graph   |
 |------------------------|----------------------------------------------|---------|
 | np.hstack((A,B))       | Stack horizontally                           | AB      |
-| np.vstack((A,B))       | Stack vertically                             | A   B   |
+| np.vstack((A,B))       | Stack vertically                             | A <br>  B   |
 | np.column_stack((A,B)) | Stack 1-D arrays as columns into a 2-D array | A.T B.T |
 
 **Comment:** I don't recommend using concatenate. It's basically same as operators mentioned above by changing axis. And it could be confusing.
