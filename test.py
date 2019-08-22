@@ -7,10 +7,7 @@ Created on Wed Aug 21 15:40:46 2019
 
 
 import numpy as np
-import pandas as pd
-path = "test_import2.csv"
-df=pd.read_csv(path, delimiter = ',', header = 0)
-print(df)
-a = df.iloc[:,:2].values
-print(a)
-print(type(a))
+def f(x,y):
+    return 10*x+y
+a = np.fromfunction(f,(5,4))
+print(a[-1])

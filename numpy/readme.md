@@ -62,6 +62,19 @@ But personally I don't recommend using tuple. Because using list is consistent w
 |------------------------|----------------------|--------------------|
 | a = np.arange(10,30,5) | same as python range | [10 15 20 25]      |
 | a = np.linspace(0,2,4) | start, stop, number  | [0. 0.667 1.333 2] |
+| a = np.fromfunction(f,(5,4)) | Construct an array by executing over each coord  |  |
+
+```Python
+def f(x,y):
+    return 10*x+y    
+a = np.fromfunction(f,(5,4))
+print(a)
+```
+> [[ 0.  1.  2.  3.]  
+ [10. 11. 12. 13.]  
+ [20. 21. 22. 23.]  
+ [30. 31. 32. 33.]  
+ [40. 41. 42. 43.]]  
 
 ## 3.2 Initializing with placeholder
 | Operator                    | Description                | Return                             |
@@ -244,3 +257,57 @@ b = np.array([[2,0],[3,4]])
 
 <span style="color:red">cumsum min exp etc needs update</span>
 ## 4.2 Linear algebra
+<span style="color:red">under construction</span>
+
+# 5. Indexing, slicing
+# 5.1 one-D
+Same as python list.  
+Example:
+```Python
+import numpy as np
+a = np.arange(10)**2
+print(a)
+```
+> [ 0  1  4  9 16 25 36 49 64 81]
+
+```Python
+print(a[2])
+```
+> 4
+
+```Python
+print(a[2:5])
+```
+> [ 4  9 16]
+
+```Python
+print(a[::-1])
+```
+> [81 64 49 36 25 16  9  4  1  0]
+# 5.2 multiple-D
+Same as python 2D list
+```Python
+def f(x,y):
+    return 10*x+y
+a = np.fromfunction(f,(5,4))
+```
+```Python
+print(a[2,3])
+```
+> 23
+
+```Python
+print(a[1:4,2])
+```
+> [12. 22. 32.]
+
+```Python
+print(a[1:3,:])
+```
+> [[10. 11. 12. 13.]  
+ [20. 21. 22. 23.]]
+
+```Python
+print(a[-1])
+```
+> [40. 41. 42. 43.]
