@@ -3,7 +3,7 @@ Zhizhong John DIng
 # Preface:
 This is a cheatsheet and tutorial for the Numpy library.
 # Table of contents
-1. [Advantage of Numpy over python list](#advantage of Numpy over python list)
+1. [Advantage of Numpy over python list](#1. advantage of Numpy over python list)
 2. [Basics](# 2. Basics)
 3. [Array creation](# 3. Array creation)
 4.
