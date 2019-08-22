@@ -11,6 +11,4 @@ def f(x,y):
     return 10*x+y
 a = np.fromfunction(f,(3,4))
 
-b = a.flatten()
-print(b)
-print(a)
+print(a.flat[6])

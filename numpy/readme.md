@@ -383,9 +383,13 @@ print(a[-1])
 # 6.3.1 ndarray.flat[]
 `a.flat` is a 1D iterator over the array
 ```Python
-a = arange(2,8)*10
+def f(x,y):
+    return 10*x+y
+a = np.fromfunction(f,(3,4))
 print(a)
-print(a.flat[3])
+print(a.flat[6])
 ```
-> [20 30 40 50 60 70]  
-50
+> [[ 0.  1.  2.  3.]  
+[10. 11. 12. 13.]  
+[20. 21. 22. 23.]]   
+12.0
