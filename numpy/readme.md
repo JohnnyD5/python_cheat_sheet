@@ -29,8 +29,8 @@ a = np.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]])
 ```
 | Operator             |                Discription               | Example       | Return                                                       |
 |----------------------|:----------------------------------------:|---------------|--------------------------------------------------------------|
-| ndarray.ndim         | Return number of axis                    | a.ndim        | 2                                                            |
-| ndarray.shape        | Return dimension (m,n)                   | a.shape       | (4,3)                                                        |
+| ndarray.ndim         | Return number of axis  (dimension)                  | a.ndim        | 2                                                            |
+| ndarray.shape        | Return shape (m,n)                   | a.shape       | (4,3)                                                        |
 | ndarray.size         | Return total number of elements          | a.size        | 12                                                           |
 | ndarray.dtype        | Return object describing the type        | a.dtype       | int 32                                                       |
 | ndarray.itemsize     | Return the size in terms of each element | a.itemsize    | 4                                                            |
@@ -268,7 +268,16 @@ b = np.array([[2,0],[3,4]])
 | b = np.ravel(a) | Return 1D flattened array, itself doesn't change      |
 | a.flatten()       | Return 1D flattened array, itself doesn't change |
 
-**Comment:** a key difference between `flatten()` and `ravel()` is that `flatten()` is a method of an `ndarray` object and hence can only be called for true numpy arrays. In contrast `ravel()` is a library-level function and hence can be called on any object that can successfully be parsed.
+**Comment:**
+1. A key difference between `flatten()` and `ravel()` is that `flatten()` is a method of an `ndarray` object and hence can only be called for true numpy arrays. In contrast `ravel()` is a library-level function and hence can be called on any object that can successfully be parsed.
+2. Turn 1D array into 2D array:
+```Python
+import numpy as np
+A = np.arange(8)
+A = A.reshape(1,8)
+#or
+A = A.reshape(8,1)
+```
 
 ```Python
 def f(x,y):
@@ -334,8 +343,14 @@ print(a)
 | np.hstack((A,B))       | Stack horizontally                           | AB      |
 | np.vstack((A,B))       | Stack vertically                             | A <br>  B   |
 | np.column_stack((A,B)) | Stack 1-D arrays as columns into a 2-D array | A.T B.T |
+| np.append(A,B) | form 1D array of AB | AB |
+| np.append(A,B, axis=0) | stack vertically | A <br>  B  |
+| np.append(A,B, axis=1) | stack horizontally | AB |
 
-**Comment:** I don't recommend using concatenate. It's basically same as operators mentioned above by changing axis. And it could be confusing.
+**Comment:**
+1. I don't recommend using concatenate. It's basically same as operators mentioned above by changing axis. And it could be confusing.
+2. For `np.append`, when axis is specified, values must have the correct dimension(`2D and 2D` or `1D and 1D`)
+
 ```Python
 import numpy as np
 A = np.arange(2,6)
@@ -364,6 +379,17 @@ print(np.vstack((A,B)))
  > [[2 3 4 5]  
  [2 4 6 8]]
 
+```Python
+np.append([[1, 2, 3], [4, 5, 6]], [[7, 8, 9]], axis=0)
+```
+> [[1, 2, 3]  
+       [4, 5, 6]  
+       [7, 8, 9]]
+
+```Python
+np.append([1, 2, 3], [[4, 5, 6], [7, 8, 9]])
+```
+> [1, 2, 3, ..., 7, 8, 9]
 
 # 6. Indexing and slicing
 ## 6.1 One-D
