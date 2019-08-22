@@ -196,7 +196,53 @@ print(type(a))
  [ 987774.37089211  210586.44665901]]  
 <class 'numpy.ndarray'>
 
-# 4. Basic operations
+# 4. Math
+## 4.1 Basic math
+### 4.1.1 Vector
+**Rule:** all operations for array (vector) are element wise.
+```Python
+a = np.array([20,30,40,50])
+b = np.arange(4) # b = np.array([0,1,2,3])
+```
+| Operator                   | Description             | Return                       |
+|----------------------------|-------------------------|------------------------------|
+| a+b /  np.add(a,b)          | Addition                | [20 31 42 53]                |
+| a-b /  np.substract(a,b)    | Subtraction             | [20 29 38 47]                |
+| a/b /  np.divide(a,b)       | Division                | [inf 30. 20. 16.67]          |
+| a*b  /  np.multiply(a,b)    | Multiplication          | [ 0 30 80 150]               |
+| b**2                       | Square                  | [0 1 4 9]                    |
+| np.sqrt(b)                 | Square Root             | [0. 1. 1.4141.732]           |
+| np.sin(a)                  | Treat element as Radian | [ 0.912 -0.988 0.745 -0.262] |
+| np.cos(a)                  | Treat element as Radian |                              |
+| np.log(a)                  | Base 2                  |                              |
+| np.dot(a,b)  /  np.sum(a*b) | Dot product             | 260                          |
+| a<35                       | comparison              | [True True False False]      |
+
+### 4.1.2 Matrix
+**Rule:** except matrix product, all operations are element wise.
+```Python
+a = np.array([[1,1],[0,1]])
+[[1 1]
+[0 1]]
+b = np.array([[2,0],[3,4]])
+[[2 0]
+[3 4]]
+```
+| Operator                 | Description             | Return                              |
+|--------------------------|-------------------------|-------------------------------------|
+| a+b /  np.add(a,b)       | Addition                | [[3 1] [3 5]]                       |
+| b-a /  np.substract(b,a) | Subtraction             | [[ 1 -1] [ 3 3]]                    |
+| b/a /  np.divide(b,a)    | Division                | [[ 2. 0.] [inf 4.]]                 |
+| a*b /  np.multiply(a,b)  | Multiplication          | [[2 0] [0 4]]                       |
+| b**2                     | Square                  | [[ 4 0] [ 9 16]]                    |
+| np.sqrt(b)               | Square Root             | [[1.41421356 0. ] [1.73205081 2. ]] |
+| np.sin(a)                | Treat element as Radian |                                     |
+| np.cos(a)                | Treat element as Radian |                                     |
+| np.log(a)                | Base 2                  |                                     |
+|  a@b /np.dot(a,b)        | Matrix dot product      | [[5 4] [3 4]]                       |
+| a<35                     | comparison              | [[ True True] [ True True]]         |
+
+## 4.2 Linear algebra
 
 
 
