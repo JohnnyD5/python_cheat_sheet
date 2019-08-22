@@ -7,8 +7,7 @@ Created on Wed Aug 21 15:40:46 2019
 
 
 import numpy as np
-def f(x,y):
-    return 10*x+y
-a = np.fromfunction(f,(3,4))
-
-print(a.flat[6])
+A = np.arange(2,6)
+B = np.arange(1,5)*2
+print(A,'\n',B)
+print(np.column_stack((A,B)))

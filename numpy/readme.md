@@ -329,7 +329,41 @@ print(a)
 [20. 21. 22. 23.]]
 
 ## 5.2 Stack and append
-### 5.2.1 vector & vector
+| Operator               | Description                                  | Graph   |
+|------------------------|----------------------------------------------|---------|
+| np.hstack((A,B))       | Stack horizontally                           | AB      |
+| np.vstack((A,B))       | Stack vertically                             | A   B   |
+| np.column_stack((A,B)) | Stack 1-D arrays as columns into a 2-D array | A.T B.T |
+
+**Comment:** I don't recommend using concatenate. It's basically same as operators mentioned above by changing axis. And it could be confusing.
+```Python
+import numpy as np
+A = np.arange(2,6)
+B = np.arange(1,5)*2
+print(A,'\n',B)
+```
+> [2 3 4 5]   
+ [2 4 6 8]
+
+```Python
+print(np.hstack((A,B)))
+```
+> [2 3 4 5 2 4 6 8]
+
+```Python
+print(np.column_stack((A,B)))
+```
+> [[2 2]  
+ [3 4]  
+ [4 6]  
+ [5 8]]   
+
+```Python
+print(np.vstack((A,B)))
+```
+ > [[2 3 4 5]  
+ [2 4 6 8]]
+
 
 # 6. Indexing and slicing
 ## 6.1 One-D
