@@ -259,10 +259,78 @@ b = np.array([[2,0],[3,4]])
 ## 4.2 Linear algebra
 <span style="color:red">under construction</span>
 
-# 5. Indexing, slicing
-# 5.1 one-D
+# 5. Shape manipulation
+# 5.1 Change shape
+| Operator        | Description                    |
+|-----------------|--------------------------------|
+| a.reshape(2,6)    | Won't change array itself      |
+| a.resize(2,6) | Will change array itself       |
+| b = np.ravel(a) | Return 1D flattened array, itself doesn't change      |
+| a.flatten()       | Return 1D flattened array, itself doesn't change |
+
+**Comment:** a key difference between `flatten()` and `ravel()` is that `flatten()` is a method of an `ndarray` object and hence can only be called for true numpy arrays. In contrast `ravel()` is a library-level function and hence can be called on any object that can successfully be parsed.
+
+```Python
+def f(x,y):
+    return 10*x+y
+a = np.fromfunction(f,(3,4))
+```
+```Python
+print(a)
+```
+> [[ 0.  1.  2.  3.]  
+ [10. 11. 12. 13.]  
+ [20. 21. 22. 23.]]  
+
+```Python
+b = a.reshape(2,6)
+print(b)
+print(a)
+```
+> [[ 0.  1.  2.  3. 10. 11.]  
+ [12. 13. 20. 21. 22. 23.]]  
+
+> [[ 0.  1.  2.  3.]  
+ [10. 11. 12. 13.]  
+ [20. 21. 22. 23.]]
+
+```Python
+ b = a.resize(2,6)
+ print(b)
+ print(a)
+ ```
+ > None
+
+ **Comment:** resize works on the array itself, it returns None
+
+ > [[ 0.  1.  2.  3. 10. 11.]  
+  [12. 13. 20. 21. 22. 23.]]  
+
+```Python
+b = np.ravel(a)
+ print(b)
+ print(a)
+ ```
+ > [ 0.  1.  2.  3. 10. 11. 12. 13. 20. 21. 22. 23.]
+
+ > [[ 0.  1.  2.  3.]  
+ [10. 11. 12. 13.]  
+ [20. 21. 22. 23.]]
+
+```Python
+b = a.flatten()
+print(b)
+print(a)
+```
+> [ 0.  1.  2.  3. 10. 11. 12. 13. 20. 21. 22. 23.]
+
+> [[ 0.  1.  2.  3.]  
+[10. 11. 12. 13.]  
+[20. 21. 22. 23.]]
+
+# 6. Indexing and slicing
+# 6.1 One-D
 Same as python list.  
-Example:
 ```Python
 import numpy as np
 a = np.arange(10)**2
@@ -284,7 +352,7 @@ print(a[2:5])
 print(a[::-1])
 ```
 > [81 64 49 36 25 16  9  4  1  0]
-# 5.2 multiple-D
+# 6.2 multiple-D
 Same as python 2D list
 ```Python
 def f(x,y):
@@ -311,3 +379,13 @@ print(a[1:3,:])
 print(a[-1])
 ```
 > [40. 41. 42. 43.]
+# 6.3 Advanced indexing
+# 6.3.1 ndarray.flat[]
+`a.flat` is a 1D iterator over the array
+```Python
+a = arange(2,8)*10
+print(a)
+print(a.flat[3])
+```
+> [20 30 40 50 60 70]  
+50
