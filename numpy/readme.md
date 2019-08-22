@@ -260,7 +260,7 @@ b = np.array([[2,0],[3,4]])
 <span style="color:red">under construction</span>
 
 # 5. Shape manipulation
-# 5.1 Change shape
+## 5.1 Change shape
 | Operator        | Description                    |
 |-----------------|--------------------------------|
 | a.reshape(2,6)    | Won't change array itself      |
@@ -328,8 +328,11 @@ print(a)
 [10. 11. 12. 13.]  
 [20. 21. 22. 23.]]
 
+## 5.2 Stack and append
+### 5.2.1 vector & vector
+
 # 6. Indexing and slicing
-# 6.1 One-D
+## 6.1 One-D
 Same as python list.  
 ```Python
 import numpy as np
@@ -352,7 +355,7 @@ print(a[2:5])
 print(a[::-1])
 ```
 > [81 64 49 36 25 16  9  4  1  0]
-# 6.2 multiple-D
+## 6.2 multiple-D
 Same as python 2D list
 ```Python
 def f(x,y):
@@ -379,8 +382,8 @@ print(a[1:3,:])
 print(a[-1])
 ```
 > [40. 41. 42. 43.]
-# 6.3 Advanced indexing
-# 6.3.1 ndarray.flat[]
+## 6.3 Advanced indexing
+### 6.3.1 ndarray.flat[]
 `a.flat` is a 1D iterator over the array
 ```Python
 def f(x,y):
