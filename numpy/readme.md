@@ -239,12 +239,8 @@ b = np.array([[2,0],[3,4]])
 | np.sin(a)                | Treat element as Radian |                                     |
 | np.cos(a)                | Treat element as Radian |                                     |
 | np.log(a)                | Base 2                  |                                     |
-|  a@b /np.dot(a,b)        | Matrix dot product      | [[5 4] [3 4]]                       |
+|  a@b /a.dot(b)        | Matrix dot product      | [[5 4] [3 4]]                       |
 | a<35                     | comparison              | [[ True True] [ True True]]         |
 
+<span style="color:red">cumsum min exp etc needs update</span>
 ## 4.2 Linear algebra
-
-
-
-
-<span style="color:red">needs further contribution</span>
