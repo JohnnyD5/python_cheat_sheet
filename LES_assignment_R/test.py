@@ -10,6 +10,11 @@ count = 0
 for line in file:
     print(line)
     count += 1
-    if line > 10:
+    if count == 10:
+        data = line
         break
-    
+
+
+print(data)
+for i in data:
+    print(i, type(i))

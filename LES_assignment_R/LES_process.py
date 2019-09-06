@@ -14,8 +14,8 @@ class LES():
         if len(path) < 1:
             path = 'C:/Users/zding5/OneDrive - Louisiana State University/Cheat_sheet/python_cheat_sheet/LES_assignment_R/data'
         self.path = path + '/u_v_time_4nodes_re1000.dat'
-        pdf=pd.read_csv(self.path,skiprows = 9, dtype= 'float64',  names = ["u1", "v1", "u2", "v2",
-                       "u3", "v3", "u4", "v4"])
+        pdf=pd.read_csv(self.path,skiprows = 9, delimiter = '  ', names = ["u1", "v1", "u2", "v2",
+                       "u3", "v3", "u4", "v4"], engine='python')
         pdf.to_hdf(path + '/cloud.h5',key='cloud')
         self.data = pd.read_hdf(path + '/cloud.h5', key='cloud')
         #self.data['v_mag'] = (self.data['vx']**2 + self.data['vy']**2)**0.5
