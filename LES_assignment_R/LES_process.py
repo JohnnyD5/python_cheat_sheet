@@ -19,17 +19,17 @@ class LES():
                        "u3", "v3", "u4", "v4"], engine='python')
         pdf.to_hdf(path + '/cloud.h5',key='cloud')
         self.data = pd.read_hdf(path + '/cloud.h5', key='cloud')
-        dt = 0.0008178
-        self.data['t'] = np.arrange(dt, dt*len(self.data), dt)
+        dt = 0.0008177
+        self.data['t'] = np.arange(dt, dt*(len(self.data)+1), dt)
 
     def time_history_plot(self, t = None, y1 = None, y2 = None):
         # Plot the angular velocity of the ellipse over time
         if t is None:
             t = self.data['t']
         if y1 is None:
-            y1 = abs(self.data['u1'])
+            y1 = abs(self.data['u2'])
         if y2 is None:
-            y2 = abs(self.data['v1'])
+            y2 = abs(self.data['u3'])
         fig, ax = plt.subplots(figsize=(6, 5))
         ax.plot(t, y1, t, y2)
         ax.set_xlabel('t')
