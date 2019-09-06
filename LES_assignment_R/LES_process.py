@@ -9,11 +9,11 @@ import matplotlib.pyplot as plt
 pd.set_option('precision', 6)
 pd.set_option('expand_frame_repr', True)
 
-class oneFile():
+class LES():
     def __init__(self, path = None):
         if len(path) < 1:
-            path = 'D:/work/LidDrivenCavity/with_shashank/k_Re_rhos1_400/case_Re7.0'
-        self.path = path + '/cloud.out'
+            path = 'C:/Users/zding5/OneDrive - Louisiana State University/Cheat_sheet/python_cheat_sheet/LES_assignment_R/data'
+        self.path = path + '/u_v_time_4nodes_re1000.dat'
         pdf=pd.read_csv(self.path, delimiter = ' ', names = ["t", "x", "y", "z",
                        "vx", "vy", "vz", "fx", "fy", "fz", "EulerAx", "EulerAy",
                        "EulerAz", "wx", "wy", "wz", "Tx", "Ty", "Tz"])
@@ -40,7 +40,7 @@ class oneFile():
         return
 
     def test(self):
-        print(type(self.data['v_mag']))
+        print(self.data)
         return 0
 
 if __name__ == '__main__':
@@ -52,6 +52,6 @@ if __name__ == '__main__':
             path[i] = '/'
     path = ''.join(path)
     ###
-    case = oneFile(path)
-    case.plot_angularV_over_t()
+    case = LES(path)
+    #case.plot_angularV_over_t()
     case.test()
