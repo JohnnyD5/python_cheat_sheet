@@ -1,13 +1,14 @@
 # A question stack overflow deleted but extremely useful in fluid dynamics
 ## plot probe data
 I am trying to turn a data file into a pandas dataframe. The first few lines of the file look like this:
-
->\# Forces     
-\# CofR       : (0.000000e+00 0.000000e+00 0.000000e+00)  
-\# Time       forces(pressure viscous porous) moment(pressure viscous porous)  
+```
+# Forces     
+# CofR       : (0.000000e+00 0.000000e+00 0.000000e+00)  
+# Time       forces(pressure viscous porous) moment(pressure viscous porous)  
 1.000000e-03    ((0.000000e+00 -1.602836e-08 0.000000e+00) (-1.922779e+00 1.540206e-10 0.000000e+00) (0.000000e+00 0.000000e+00 0.000000e+00)) ((0.000000e+00 0.000000e+00 1.185805e-06) (0.000000e+00 0.000000e+00 1.922779e+00) (0.000000e+00 0.000000e+00 0.000000e+00))  
 2.000000e-03    ((0.000000e+00 -3.904013e-09 0.000000e+00) (-1.893677e+00 2.888988e-10 0.000000e+00) (0.000000e+00 0.000000e+00 0.000000e+00)) ((0.000000e+00 0.000000e+00 3.537284e-06) (0.000000e+00 0.000000e+00 1.893677e+00) (0.000000e+00 0.000000e+00 0.000000e+00))  
 3.000000e-03    ((0.000000e+00 9.851879e-08 0.000000e+00) (-1.453065e+00 4.435274e-11 0.000000e+00) (0.000000e+00 0.000000e+00 0.000000e+00)) ((0.000000e+00 0.000000e+00 3.650183e-06) (0.000000e+00 0.000000e+00 1.453065e+00) (0.000000e+00 0.000000e+00 0.000000e+00))  
+```
 
 The data follows a strict format:
 ```
