@@ -1,4 +1,5 @@
-## 
+# A question stack overflow deleted but extremely useful in fluid dynamics
+## plot probe data
 I am trying to turn a data file into a pandas dataframe. The first few lines of the file look like this:
 
 >\# Forces     
