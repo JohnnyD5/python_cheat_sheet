@@ -1,9 +1,9 @@
 # A question stack overflow deleted but extremely useful in fluid dynamics
 Comment: Stack overflow nowadays is not the old stack overflow anymore. Too many petty privilidged old nazis user there who have the authority to downvote any questions that they don't like. 
 
-Stack overflow is a perfect example of poor engine design and merit system causing of good website to go downturn. 
+Stack overflow is a perfect example of poor engine design and merit system causing a good website to go downturn. 
 
-As a Engineer, scientist and programmer, remember, build a good structure early on is very important to prevent nazis or tyranny behaviors like stack overflow is now.  
+As a Engineer, scientist and programmer, remember that building a good structure early on is very important to prevent nazis or tyranny behaviors like stack overflow is now.  
 ## plot probe data
 I am trying to turn a data file into a pandas dataframe. The first few lines of the file look like this:
 ```
