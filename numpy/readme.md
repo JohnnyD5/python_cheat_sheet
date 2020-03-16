@@ -173,6 +173,7 @@ print(data['X'])
  2. `names = True` to access the header and use it as column name to return a specific column
 
 #### Method 3. load csv with Pandas
+**Note**: if the data is generated in excel file, should export the data as csv file. 
 1. get array from data
 ```Python
 import pandas as pd
