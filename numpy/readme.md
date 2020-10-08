@@ -352,6 +352,16 @@ print(a)
 1. I don't recommend using concatenate. It's basically same as operators mentioned above by changing axis. And it could be confusing.
 2. For `np.append`, when axis is specified, values must have the correct dimension(`2D and 2D` or `1D and 1D`)
 
+add a 1D vector to 2D array (stack horizontally)
+```Python
+2d_array = [[2 3 4 5]  
+ [2 4 6 8]]
+1d_array = [1 2 3 4]
+1d_array_convert = 1d_array.reshape(len(1d_array),1)
+new_matrix = np.hstack((2d_array, 1d_array_convert))
+```
+
+
 ```Python
 import numpy as np
 A = np.arange(2,6)
