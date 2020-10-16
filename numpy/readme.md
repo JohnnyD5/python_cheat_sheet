@@ -173,7 +173,7 @@ print(data['X'])
  2. `names = True` to access the header and use it as column name to return a specific column
 
 #### Method 3. load csv with Pandas
-**Note**: if the data is generated in excel file, should export the data as csv file. 
+**Note**: if the data is generated in excel file, should export the data as csv file.
 1. get array from data
 ```Python
 import pandas as pd
@@ -352,16 +352,6 @@ print(a)
 1. I don't recommend using concatenate. It's basically same as operators mentioned above by changing axis. And it could be confusing.
 2. For `np.append`, when axis is specified, values must have the correct dimension(`2D and 2D` or `1D and 1D`)
 
-add a 1D vector to 2D array (stack horizontally)
-```Python
-2d_array = [[2 3 4 5]  
- [2 4 6 8]]
-1d_array = [1 2 3 4]
-1d_array_convert = 1d_array.reshape(len(1d_array),1)
-new_matrix = np.hstack((2d_array, 1d_array_convert))
-```
-
-
 ```Python
 import numpy as np
 A = np.arange(2,6)
@@ -401,6 +391,41 @@ np.append([[1, 2, 3], [4, 5, 6]], [[7, 8, 9]], axis=0)
 np.append([1, 2, 3], [[4, 5, 6], [7, 8, 9]])
 ```
 > [1, 2, 3, ..., 7, 8, 9]
+### Useful maneuver
+1. add a 1D vector to 2D array (stack horizontally)**
+```Python
+A_2d = np.array([[2, 3],
+                 [4, 5],
+                 [6, 7],
+                 [8, 9]])
+B_1d = np.array([1, 2, 3, 4])
+B_1d_reshape = B_1d.reshape(len(B_1d),1)
+new_matrix = np.hstack((A_2d,B_1d_reshape))
+print(new_matrix)
+```
+> [[2 3 1]  
+ [4 5 2]  
+ [6 7 3]  
+ [8 9 4]]  
+
+ 2. Put together multiple arrays into a matrix
+ ```Python
+ # matrix: t, x, y, v
+ t = np.array([0,1,2,3,4])
+ x = np.array([-2,-1,0,1,2])
+ y = np.array([-3,-1.5,0,1.5,3])
+ v = np.array([10,20,30,40,50])
+ new_matrix = np.hstack((t.reshape(len(t),1),
+                         x.reshape(len(x),1),
+                         y.reshape(len(y),1),
+                         v.reshape(len(v),1)))
+print(new_matrix)
+ ```
+ > [[ 0.  -2.  -3.  10. ]  
+ [ 1.  -1.  -1.5 20. ]  
+ [ 2.   0.   0.  30. ]  
+ [ 3.   1.   1.5 40. ]  
+ [ 4.   2.   3.  50. ]]  
 
 # 6. Indexing and slicing
 ## 6.1 One-D
