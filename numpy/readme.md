@@ -41,6 +41,8 @@ a = np.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]])
 ## Data type conversion
 `ndarray.astype(type)` is a great tool to convert data to int, float or str.
 # 3. Array creation
+## 3.0. Create empty array of unknow length
+a = np.array([])
 ## 3.1. From known value
 Create from python list, python tuple or python list of tuples, or python list of list.
 Results are same no matter from list of list or from tuple of list. Recommend using List to avoid confusion
